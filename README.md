@@ -2,6 +2,8 @@
 
 * Ruby version 
   3.0.2
+  
+* Rails version 6.1.6.1
 
 * System dependencies
 
