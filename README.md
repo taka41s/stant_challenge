@@ -16,7 +16,7 @@
   rake db:migrate
   
   
-  * Disclaimer
+* Disclaimer
   
   A maior parte da lógica está no arquivo parser.rb
   No PalestrasController eu coloquei para reenderizar o json dos arquivos sem um redirect pro index.
