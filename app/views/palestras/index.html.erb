@@ -1,28 +1,31 @@
 <p id="notice"><%= notice %></p>
-<a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="<%= new_palestra_path %>">New palestra</a>
-<a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="<%= upload_path %>">Upload a document</a>
-<table class="table-auto">
-  <thead>
-    <tr>
-      <th class="px-4 py-2">Schedule</th>
-      <th class="px-4 py-2">Track</th>
-      <th class="px-4 py-2">Event</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @palestras.order('created_at ASC').each do |palestra| %>
+<div class="wrapper">
+  <div>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="<%= new_palestra_path %>">New palestra</a>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="<%= upload_path %>">Upload a document</a>
+  </div>
+  <table class="table-auto">
+    <thead>
       <tr>
-        <td class="border px-4 py-2"><%= palestra.schedule %></td>
-        <td class="border px-4 py-2"><%= palestra.track %></td>
-        <td class="border px-4 py-2"><%= palestra.event %></td>
-        <td class="border px-4 py-2"><%= link_to 'Show', palestra %></td>
-        <td class="border px-4 py-2"><%= link_to 'Edit', edit_palestra_path(palestra) %></td>
-        <td class="border px-4 py-2"><%= link_to 'Destroy', palestra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="px-4 py-2">Schedule</th>
+        <th class="px-4 py-2">Track</th>
+        <th class="px-4 py-2">Event</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @palestras.order('created_at ASC').each do |palestra| %>
+        <tr>
+          <td class="border px-4 py-2"><%= palestra.schedule %></td>
+          <td class="border px-4 py-2"><%= palestra.track %></td>
+          <td class="border px-4 py-2"><%= palestra.event %></td>
+          <td class="border px-4 py-2"><%= link_to 'Show', palestra %></td>
+          <td class="border px-4 py-2"><%= link_to 'Edit', edit_palestra_path(palestra) %></td>
+          <td class="border px-4 py-2"><%= link_to 'Destroy', palestra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
