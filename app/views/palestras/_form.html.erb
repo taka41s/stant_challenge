@@ -1,0 +1,37 @@
+<%= form_with(model: palestra) do |form| %>
+  <% if palestra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(palestra.errors.count, "error") %> prohibited this palestra from being saved:</h2>
+
+      <ul>
+        <% palestra.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="block text-gray-700 text-sm font-bold mb-2">
+    <%= form.label :event %>
+    <%= form.text_field :event %>
+  </div>
+
+  <div class="block text-gray-700 text-sm font-bold mb-2">
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+  </div>
+
+  <div class="block text-gray-700 text-sm font-bold mb-2">
+    <%= form.label :schedule %>
+    <%= form.text_field :schedule %>
+  </div>
+
+    <div class="block text-gray-700 text-sm font-bold mb-2">
+    <%= form.label :track %>
+    <%= form.text_field :track %>
+  </div>
+
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+    <%= form.submit %>
+  </button>
+<% end %>
