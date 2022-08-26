@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use postgresql as the database for Active Record
 gem "pg", '~> 1.4.3'
-
+gem 'rspec-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

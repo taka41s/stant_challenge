@@ -45,4 +45,12 @@ class PalestrasControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to palestras_url
   end
+
+  test "should read a list and parse it" do
+    assert_difference('Palestra.count', -1) do
+      delete palestra_url(@palestra)
+    end
+
+    assert_redirected_to palestras_url
+  end
 end
