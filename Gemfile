@@ -20,6 +20,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'sidekiq', '~> 6.5', '>= 6.5.2'
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+
+gem 'dotenv-rails'
+
 # Use postgresql as the database for Active Record
 gem "pg", '~> 1.4.3'
 gem 'rspec-rails'

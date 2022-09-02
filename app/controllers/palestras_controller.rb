@@ -61,26 +61,10 @@ class PalestrasController < ApplicationController
   end
 
   def converted_upload_to_json
-    parsed_elements = Parser.new(archive_path: params[:document]).make
-    json_elements_converted = []
+    write_path = File.write('./handlefile/document.txt', params[:document].read.force_encoding("UTF-8"))
+    response = HardJob.perform_later('./handlefile/document.txt')
 
-    parsed_elements[:track_a].map{|x| x}.each do |palestra|
-      @palestra = Palestra.new(palestra)
-      @palestra.track = "Track A"
-      @palestra.save
-    end
-
-    parsed_elements[:track_b].map{|x| x}.each do |palestra|
-      @palestra = Palestra.new(palestra)
-      @palestra.track = "Track B"
-      @palestra.save
-    end
-
-    parsed_elements.each do |parsed|
-      json_elements_converted << parsed.to_json
-    end
-
-    render json: json_elements_converted
+    render json: {result: response, head: :ok}
   end
 
   private
