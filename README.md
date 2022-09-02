@@ -14,7 +14,14 @@
 
   rake db:create
   rake db:migrate
-  
+
+* Setup
+
+  rake assets:precompile
+
+* Running
+
+  rails s
   
 * Disclaimer
   
