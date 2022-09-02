@@ -63,7 +63,7 @@ class PalestrasController < ApplicationController
   def converted_upload_to_json
     document = params[:document].read.force_encoding("UTF-8")
 
-    response = HardJob.perform_later(document)
+    response = ParserJob.perform_later(document)
     render json: {result: response, head: :ok}
   end
 
