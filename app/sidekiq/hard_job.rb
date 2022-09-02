@@ -2,7 +2,12 @@ class HardJob < ActiveJob::Base
   queue_as :default
 
   def perform(document)
-    parsed_elements = Parser.new(archive_path: document).make
+    path = "./handlefile/#{self.job_id}.txt"
+    file = File.new(path, "w")
+    file.puts(document)
+    file.close
+
+    parsed_elements = Parser.new(archive_path: file).make
     json_elements_converted = []
 
     parsed_elements[:track_a].map{|x| x}.each do |palestra|

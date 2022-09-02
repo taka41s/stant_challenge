@@ -61,9 +61,9 @@ class PalestrasController < ApplicationController
   end
 
   def converted_upload_to_json
-    write_path = File.write('./handlefile/document.txt', params[:document].read.force_encoding("UTF-8"))
-    response = HardJob.perform_later('./handlefile/document.txt')
-
+    document = params[:document].read.force_encoding("UTF-8")
+    # path = "./handlefile/#{Digest::MD5.hexdigest(File.write(document))}"
+    response = HardJob.perform_later(document)
     render json: {result: response, head: :ok}
   end
 
