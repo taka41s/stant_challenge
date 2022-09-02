@@ -1,27 +1,13 @@
 # README
 
-* Ruby version 
-  3.0.2
-  
-* Rails version 6.1.6.1
-
 * System dependencies
-
-  gem "pg", '~> 1.4.3'
-  postgresql 14.4
-
-* Database creation
-
-  rake db:create
-  rake db:migrate
-
-* Setup
-
-  rake assets:precompile
+  We're using docker here. After install docker you will need to run 
+ 
+  docker-compose build
 
 * Running
 
-  rails s
+ docker-compose up -d
   
 * Disclaimer
   
