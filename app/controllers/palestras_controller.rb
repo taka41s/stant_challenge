@@ -57,9 +57,6 @@ class PalestrasController < ApplicationController
     end
   end
 
-  def upload
-  end
-
   def converted_upload_to_json
     document = params[:document].read.force_encoding("UTF-8")
 

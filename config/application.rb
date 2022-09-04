@@ -14,8 +14,7 @@ module Stant
     if ['development', 'test'].include? ENV['RAILS_ENV']
       Dotenv::Railtie.load
     end
-
-    HOSTNAME = ENV['HOSTNAME']
+    config.hosts << "www.example.com"
 
     config.active_job.queue_adapter = :sidekiq
     Sidekiq.configure_server { |c| c.redis = { url: ENV['REDIS_URL'] } }
